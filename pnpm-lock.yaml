@@ -23,8 +23,8 @@ devDependencies:
     specifier: 18.2.22
     version: 18.2.22
   organic-shape:
-    specifier: 1.0.0-beta.3
-    version: 1.0.0-beta.3(gl-matrix@3.4.3)
+    specifier: 1.0.0-beta.4
+    version: 1.0.0-beta.4(gl-matrix@3.4.3)
   typescript:
     specifier: 5.2.2
     version: 5.2.2
@@ -230,8 +230,8 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /organic-shape@1.0.0-beta.3(gl-matrix@3.4.3):
-    resolution: {integrity: sha512-Jw3Wm2Cq/E/z0ZkFam7tYEQj0s4LFrQR4EY77n49aE3FMROnsRQcv4vlFDG7Mcu094bv/xP6gGtxS74RkMEyaQ==}
+  /organic-shape@1.0.0-beta.4(gl-matrix@3.4.3):
+    resolution: {integrity: sha512-H5p4V6GFrfaBRuCNHI/HWYvzMryjCgovlZ/ojv3SGXMB1pdly+bieermkecxl46n/SOs//mVmwb+KWDBVVFc/A==}
     peerDependencies:
       gl-matrix: ^3.4.3
     dependencies:
