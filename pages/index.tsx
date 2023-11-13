@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Portrait from "./portrait";
 
 export default function Home() {
     return (
@@ -12,7 +13,7 @@ export default function Home() {
             </Head>
 
             <main>
-                <Image style={{ borderRadius: "50%" }} src="/portrait.jpeg" width={400} height={400} alt={"portrait"} />
+                <Portrait width={400} height={400}/>
 
                 <p className={styles.description}>A programmer with a sense of justice, but struggling to make ends meet, Please contact me for any opportunities to "run".</p>
 
@@ -34,6 +35,7 @@ export default function Home() {
 
             <style jsx>{`
                 main {
+                    position: relative;
                     padding: 5rem 0;
                     flex: 1;
                     display: flex;

@@ -16,6 +16,7 @@
   "devDependencies": {
     "@types/node": "20.7.0",
     "@types/react": "18.2.22",
+    "organic-shape": "1.0.0-beta.3",
     "typescript": "5.2.2"
   }
 }
