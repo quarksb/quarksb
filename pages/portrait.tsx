@@ -24,14 +24,14 @@ export default function Portrait(portraitProps: PortraitProps) {
 
         const pathStr = getRandomPathStr(width - 2 * blurExtra, height - 2 * blurExtra, 10);
         const path2D = new Path2D(pathStr);
-        console.log(pathStr);
-        context.filter = `blur(${blur}px)`;
-        context.translate(blurExtra, blurExtra);
-        context.fill(path2D);
-        context.globalCompositeOperation = "source-in";
-        context.filter = "none";
-        context.translate(-blurExtra, -blurExtra);
+
         image.onload = () => {
+            context.filter = `blur(${blur}px)`;
+            context.translate(blurExtra, blurExtra);
+            context.fill(path2D);
+            context.globalCompositeOperation = "source-in";
+            context.filter = "none";
+            context.translate(-blurExtra, -blurExtra);
             context.drawImage(image, 0, 0, image.width, image.height, 0, 0, width, height);
         };
     }, []);
