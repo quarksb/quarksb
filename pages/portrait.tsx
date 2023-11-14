@@ -26,7 +26,7 @@ export default function Portrait(portraitProps: PortraitProps) {
         // context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 
         image.onload = () => {
-            const createPolygon = () => getPolygon(width, height, 8, 0.4, Math.random());
+            const createPolygon = () => getPolygon(width, height, 8, 0.4, Math.random(), Math.random(), Math.random(), Math.random());
             const currentState = {
                 polygon: createPolygon(),
                 targetPolygon: createPolygon(),
@@ -35,14 +35,15 @@ export default function Portrait(portraitProps: PortraitProps) {
             };
             let initTime = performance.now();
             const baseRender = (time: number) => {
-                if (time > currentState.repeat * currentState.duration) {
+                if (time - initTime > currentState.repeat * currentState.duration) {
                     currentState.polygon = currentState.targetPolygon;
                     currentState.targetPolygon = createPolygon();
                     currentState.repeat++;
                 }
 
-                const baseT = (time - initTime - currentState.repeat * currentState.duration) / currentState.duration;
-                const t = getEaseElasticOut(baseT);
+                const baseT = (time - initTime - (currentState.repeat - 1) * currentState.duration) / currentState.duration;
+                const t = (baseT);
+
                 const tempPolygon = interpolatePolygon(currentState.polygon, currentState.targetPolygon, t);
                 const curves = getCurvesByPolygon(tempPolygon);
                 resizeCurvesByBBox(curves, { x: blurExtra, y: blurExtra, width: width - 2 * blurExtra, height: height - 2 * blurExtra });
