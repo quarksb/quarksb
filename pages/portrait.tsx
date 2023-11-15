@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, use } from "react";
-import { getCurvesByPolygon, getEaseElasticOut, getPathStr, getPolygon, getRandomPathStr, interpolatePolygon, resizeCurvesByBBox } from "organic-shape";
+import { getCurvesByPolygon, getPathStr, getPolygon, interpolatePolygon, resizeCurvesByBBox } from "organic-shape";
 
 interface PortraitProps {
     width: number;
@@ -26,7 +26,7 @@ export default function Portrait(portraitProps: PortraitProps) {
         // context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 
         image.onload = () => {
-            const createPolygon = () => getPolygon(width, height, 8, 0.4, Math.random(), Math.random(), Math.random(), Math.random());
+            const createPolygon = () => getPolygon(width, height, 8, 0.4, Math.random(), Math.random());
             const currentState = {
                 polygon: createPolygon(),
                 targetPolygon: createPolygon(),
